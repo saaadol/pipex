@@ -13,7 +13,7 @@ char	**ft_split(char const *s, char c);
 int ft_strlen(char *str);
 char	*ft_strchr(char *s, char *target);
 char	*ft_strjoin(char  *s1, char  *s2);
-
+char *checking_path(char **av, char *envp[], char *comm);
 
 
 #endif
