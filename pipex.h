@@ -17,6 +17,7 @@ char	*ft_newstrchr(char *s, char *target);
 char *checking_path(char **av, char *envp[], char *comm);
 int	ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_join(char *s1, char *s2);
+void exec_function(char **av, char *envp[], char **command, char *x);
 
 
 #endif

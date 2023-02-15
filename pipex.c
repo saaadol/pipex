@@ -20,6 +20,7 @@ char	*ft_newstrchr(char *s, char *target)
 		i++;
 	}
 	return NULL;
+
 }
 
 char *located_path_return(char *envp[])
@@ -121,20 +122,20 @@ int child_fork2(char **av, char *envp[], int *pips)
 	return pid2;
 }
 
-int main(int ac, char **av, char *envp[])
-{
-	pid_t pid[2];
-	char **split;
-	int pips[2];
-	char **command;
-	if (ac != 5)
-		return (write (2, "few or more arguments\n", 22), 0);
-	pipe(pips);
-	pid[0] = child_fork1(av, envp, pips);
-	pid[1] = child_fork2(av,envp,pips);
-	close(pips[1]);
-	close(pips[0]);	
-	waitpid(pid[0], NULL, 0);
-	waitpid(pid[1], NULL, 0);
-}
+// int main(int ac, char **av, char *envp[])
+// {
+// 	pid_t pid[2];
+// 	char **split;
+// 	int pips[2];
+// 	char **command;
+// 	if (ac != 5)
+// 		return (write (2, "few or more arguments\n", 22), 0);
+// 	pipe(pips);
+// 	pid[0] = child_fork1(av, envp, pips);
+// 	pid[1] = child_fork2(av,envp,pips);
+// 	close(pips[1]);
+// 	close(pips[0]);	
+// 	waitpid(pid[0], NULL, 0);
+// 	waitpid(pid[1], NULL, 0);
+// }
 
