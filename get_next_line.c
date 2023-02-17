@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:58:37 by souledla          #+#    #+#             */
-/*   Updated: 2023/02/14 00:07:06 by souledla         ###   ########.fr       */
+/*   Updated: 2023/02/17 01:01:24 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 	if (!x)
 		x = ft_strdup("");
 	if (!x)
-		return (0); 
+		return (0);
 	x = findline(fd, x);
 	if (!x)
 		return (NULL);
@@ -122,5 +122,4 @@ char	*get_next_line(int fd)
 // 	s = get_next_line(fd);
 // 	s = get_next_line(fd);
 // 	printf("%s", s);
-	
 // }
