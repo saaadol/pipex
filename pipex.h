@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 00:57:59 by souledla          #+#    #+#             */
-/*   Updated: 2023/02/17 00:59:54 by souledla         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:54:35 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include "get_next_line.h"
 
-char	**ft_free(char **str, size_t j);
+char	**freeing_memory(char **str, size_t j);
 char	**ft_split(char const *s, char c);
 int		ft_strlen(char *str);
 char	*ft_newstrchr(char *s, char *target);
@@ -42,6 +42,7 @@ void	heredoc(int ac, char **av, char *envp[]);
 void	bonus_command_exec(char *envp[], char **command, char *x);
 void	closing_pipes_herdoc(int **pips);
 char	*ft_newstrchr(char *s, char *target);
+void	while_pipe(int **pips);
 char	*located_path_return(char *envp[]);
 char	*checking_path(char *envp[], char *comm);
 void	exec_function(char *envp[], char **command, char *x);

@@ -1,0 +1,18 @@
+       5
+Makefile
+bonus_utils.c
+get_next_line.c
+get_next_line.h
+get_next_line_utils.c
+infile
+libft.c
+libft_utils.c
+outfile
+pipex
+pipex.c
+pipex.h
+pipex_bonus.c
+pipex_bonus_heredoc_utils.c
+pipex_bonus_utils.c
+pipex_utils.c
+utils.c

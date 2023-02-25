@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:16:34 by souledla          #+#    #+#             */
-/*   Updated: 2023/02/17 00:47:17 by souledla         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:53:54 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,7 @@ void	heredoc(int ac, char **av, char *envp[])
 	pips = malloc(sizeof(int *) * 2);
 	while (pips[i])
 		pips[i++] = malloc(sizeof(int) * 2);
-	i = 0;
-	while (i < 2)
-		pipe(pips[i++]);
+	while_pipe(pips);
 	joined = ft_join(av[2], "\n");
 	while (1)
 	{

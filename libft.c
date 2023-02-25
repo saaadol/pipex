@@ -6,32 +6,32 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 00:38:20 by souledla          #+#    #+#             */
-/*   Updated: 2023/02/17 00:38:24 by souledla         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:22:49 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static size_t	ft_count_word(char const *s, char c)
+static size_t	counting_words(char const *s, char c)
 {
 	size_t	i;
-	size_t	count;
+	size_t	counter;
 
-	count = 0;
+	counter = 0;
 	i = 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] != '\0' && s[i] == c)
 			i++;
 		if (s[i] != '\0')
-			count++;
+			counter++;
 		while (s[i] != '\0' && s[i] != c)
 			i++;
 	}
-	return (count);
+	return (counter);
 }
 
-static size_t	ft_strlen_checker(char const *s, char c)
+static size_t	checking_strlen(char const *s, char c)
 {
 	size_t	i;
 
@@ -41,7 +41,7 @@ static size_t	ft_strlen_checker(char const *s, char c)
 	return (i);
 }
 
-char	**ft_free(char **str, size_t j)
+char	**freeing_memory(char **str, size_t j)
 {
 	int	i;
 
@@ -63,36 +63,36 @@ char	**ft_free(char **str, size_t j)
 	return (0);
 }
 
-static char	*ft_word(char const *s, char c)
+static char	*returning_word(char const *s, char c)
 {
-	size_t	len_word;
+	size_t	word_len;
 	size_t	i;
-	char	*word;
+	char	*word_;
 
 	i = 0;
-	len_word = ft_strlen_checker(s, c);
-	word = (char *)malloc(sizeof(char) * (len_word + 1));
-	if (!word)
+	word_len = checking_strlen(s, c);
+	word_ = (char *)malloc(sizeof(char) * (word_len + 1));
+	if (!word_)
 		return (0);
-	while (i < len_word)
+	while (i < word_len)
 	{
-		word[i] = s[i];
+		word_[i] = s[i];
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	word_[i] = '\0';
+	return (word_);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
+	char	**array;
 	size_t	i;
 
 	if (!s)
 		return (0);
 	i = 0;
-	str = (char **)malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
-	if (!str)
+	array = (char **)malloc(sizeof(char *) * (counting_words(s, c) + 1));
+	if (!array)
 		return (0);
 	while (*s != '\0')
 	{
@@ -100,14 +100,14 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s != '\0')
 		{
-			str[i] = ft_word(s, c);
-			if (!(str[i]))
-				return (ft_free(str, i));
+			array[i] = returning_word(s, c);
+			if (!(array[i]))
+				return (freeing_memory(array, i));
 			i++;
 		}
 		while (*s && *s != c)
 			s++;
 	}
-	str[i] = 0;
-	return (str);
+	array[i] = 0;
+	return (array);
 }
